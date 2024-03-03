@@ -9,7 +9,7 @@ using namespace std;
 //
 //Dear Professor.
 //I know this isn't even game ready.
-//But I'm too afraid to speak up in class about it about needing help.
+//But I'm too afraid to speak up in class about needing help.
 //I've tried countless times to rewrite the whole file or even just the section below to turn it into an array, but I keep getting error after error.
 //It would take until the end of this course just to finish this one assignment.
 //I'm so sorry, but I need to hand this in at this point.
