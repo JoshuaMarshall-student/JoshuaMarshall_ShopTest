@@ -37,23 +37,23 @@ int main()
     cout << "You got 900 GOLD!" << endl;
     system("pause");
 
-//This is where the gameplay starts, using switch statements to decide where to go.
+    //This is where the gameplay starts, using switch statements to decide where to go.
 begin:
     system("cls");
     cout << "You notice a shop in the distance. You decide to..." << endl;
-    cout << "[1.] Enter it." << endl;
-    cout << "[2.] Leave." << endl;
+    cout << "1. Enter it." << endl;
+    cout << "2. Leave." << endl;
     cout << "> ";
     cin >> select;
     switch (select) {
         //You enter the shop.
-shop:
+    shop:
     case 1:
         system("cls");
         cout << "Woah there! I've got some neat junk for sale!" << endl;
         cout << "1. Buy" << endl;
         cout << "2. Sell" << endl;
-        cout << "3+. Leave" << endl;
+        cout << "3. Leave" << endl;
         cout << "> ";
         cin >> select;
         switch (select) {
@@ -67,7 +67,7 @@ shop:
             cout << "2. Sea Tea - 18G" << endl;
             cout << "3. Cloudy Glasses - 30G" << endl;
             cout << "4. Torn Notebook - 55G" << endl;
-            cout << "5+. Leave" << endl;
+            cout << "5. Leave" << endl;
             cout << "> ";
             cin >> select;
             switch (select) {
@@ -164,19 +164,13 @@ shop:
                         system("pause");
                         goto purchase;
                     }
-                }
             case 5:
                 goto shop;
-            case 6:
-                goto shop;
-            case 7:
-                goto shop;
-            case 8:
-                goto shop;
-            case 9:
-                goto shop;
-            case 0:
-                goto shop;
+                }
+            default:
+                cout << "\n(The option you have picked is unavailable.)" << int(select) << endl;
+                system("pause");
+                goto purchase;
             }
 
             //You decide to sell something.
@@ -192,11 +186,11 @@ shop:
             cout << "5. Manly Bandanna - 50G - Amount :" << bandanna << endl;
             cout << "6. Torn Notebook - 50G - Amount :" << notebook << endl;
             cout << "7. Cloudy Glasses - 50G - Amount :" << glasses << endl;
-            cout << "8+. Leave";
+            cout << "8. Leave" << endl;
             cout << "> ";
             cin >> select;
             switch (select) {
-            //Selling Temmie Flakes
+                //Selling Temmie Flakes
             case 1:
                 if (consumablecandy < 1) { //This section checks if the player actually has the item.
                     system("cls");
@@ -211,7 +205,8 @@ shop:
                     cout << "(You sold the Temmie Flakes!)" << endl;
                     system("pause");
                     goto remove;
-            //Selling Crab Apples
+                }
+                //Selling Crab Apples
             case 2:
                 if (consumable < 1) { //This section checks if the player actually has the item.
                     system("cls");
@@ -226,7 +221,8 @@ shop:
                     cout << " (You sold the Crab Apple!)" << endl;
                     system("pause");
                     goto remove;
-            //Selling Sea Tea
+                }
+                //Selling Sea Tea
             case 3:
                 if (consumable2 < 1) { //This section checks if the player actually has the item.
                     system("cls");
@@ -241,7 +237,8 @@ shop:
                     cout << "> (You sold the Sea Tea!)" << endl;
                     system("pause");
                     goto remove;
-                    //Selling Tough Gloves
+                }
+                //Selling Tough Gloves
             case 4:
                 if (gloves < 1) {  //This section checks if the player actually has the item.
                     system("cls");
@@ -256,11 +253,12 @@ shop:
                     cout << "> (You sold the Tough Gloves!)" << endl;
                     system("pause");
                     goto remove;
-                    //Selling Bandanna
+                }
+                //Selling Bandanna
             case 5:
                 if (bandanna < 1) { //This section checks if the player actually has the item.
                     system("cls");
-                    cout << "> You don't have any!" << endl; 
+                    cout << "> You don't have any!" << endl;
                     system("pause");
                     goto remove;
                 }
@@ -272,6 +270,7 @@ shop:
                     system("pause");
                     goto remove;
                     //Selling Torn Notebook
+                }
             case 6:
                 if (notebook < 1) { //This section checks if the player actually has the item.
                     system("cls");
@@ -287,13 +286,14 @@ shop:
                     cout << "> (You sold the Torn Notebook!)" << endl;
                     system("pause");
                     goto remove;
-                    //Selling Cloudy Glasses
+                }
+                //Selling Cloudy Glasses
             case 7:
                 if (glasses < 1) {
                     system("cls"); //This section checks if the player actually has the item.
                     cout << "> You don't have any!" << endl;
                     system("pause");
-                    goto remove;
+                    goto shop;
                 }
                 else {
                     system("cls");
@@ -303,26 +303,28 @@ shop:
                     cout << "> (You sold the Cloudy Glasses!)" << endl;
                     system("pause");
                     goto remove;
+                }
             case 8:
                 goto shop;
-            case 9:
-                goto shop;
-            case 0:
-                goto shop;
-                }
-                }
-                }
-                }
-                }
-                }
-                }
+            default:
+                cout << "\n(The option you have picked is unavailable.)" << int(select) << endl;
+                system("pause");
+                goto remove;
             }
+        case 3:
+            goto begin;
+        default:
+            cout << "\n(The option you have picked is unavailable.)" << int(select) << endl;
+            system("pause");
+            goto shop;
         }
-    case 3:
+    case 2:
+        break;
+    default:
+        cout << "\n(The option you have picked is unavailable.)" << int(select) << endl;
+        system("pause");
         goto begin;
-        //Restarts the program.
     }
 }
-
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
